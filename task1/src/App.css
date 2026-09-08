@@ -1,0 +1,50 @@
+*{
+  padding : 0;
+  margin : 0;
+  box-sizing: border-box;
+}
+
+#image{
+ height: 31.25rem;
+width: 31.25rem;
+  background-color: brown;
+  display :block;
+}
+#content{
+  width : 100%;
+  height : 100vh;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+#content h2{
+ 
+  padding : 20px;
+}
+#Price{
+  background-color: bisque;
+  text-align: center;
+   margin : 5px 20px;
+   outline: 10px;
+   border :none;
+}
+#Increase ,#Decrease{           
+  /* | Value    | Equivalent |
+| -------- | ---------: |
+| `0.5rem` |      `8px` |
+| `1rem`   |     `16px` |
+| `1.5rem` |     `24px` |
+| `2rem`   |     `32px` |
+| `3rem`   |     `48px` | */
+
+  width : 1rem; /* It is a CSS unit that is relative to the root element (html) font size */
+  background-color: blue;
+  color : white;
+  border-radius : 5px;
+
+  
+}
+
+
