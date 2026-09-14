@@ -1,0 +1,44 @@
+#NavBar{
+  background-color : red;
+  height : 50px;
+  width : 100%;
+  display : flex;
+  align-items: center;
+
+}
+#NavBar a{
+   text-decoration: none;
+   color : white;
+   padding : 0px 5px;
+}
+#Footer{
+  background-color : red;
+  height : 50px;
+  width : 100%;
+  color : white;
+  text-align: center;
+}
+#Content{
+
+  flex-grow : 1;
+  display : flex ;
+  flex-direction: column;
+  justify-content : center;
+  align-items: center;
+ 
+}
+#page{
+  display : flex;
+  flex-direction : column;
+  height : 100vh;
+  width : 100%;
+  
+}
+#Card{
+  display : grid;
+
+  flex-grow : 1;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+}
+
