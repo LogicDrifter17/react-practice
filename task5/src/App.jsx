@@ -7,12 +7,16 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Products from './Components/Products'
 import ProductDetails from './Components/ProductDetails'
 import Cart from './Components/Cart'
+import { createContext, useReducer, useState } from 'react'
+export let context = createContext()
 function App() {
-   
+  let[cartid,dispatch]= useReducer(reducer,[])
+  
 
   return (
     <>
-    <BrowserRouter> <div id = "Page">
+    <context.Provider  value={{cartid,dispatch}}>
+ <BrowserRouter> <div id = "Page">
 
      <NavBar/>
         <Routes>
@@ -25,6 +29,9 @@ function App() {
 
     </div>
     </BrowserRouter>
+
+    </context.Provider>
+   
    
 
     </>
