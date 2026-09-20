@@ -7,11 +7,34 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Products from './Components/Products'
 import ProductDetails from './Components/ProductDetails'
 import Cart from './Components/Cart'
-import { createContext, useReducer, useState } from 'react'
+import { createContext, useEffect, useReducer, useState } from 'react'
 export let context = createContext()
 function App() {
-  let[cartid,dispatch]= useReducer(reducer,[])
-  
+    function reducer(state,action){
+     switch(action.type){
+      case "Add" :
+         if(!state.includes(action.payload)){
+               return [...state,action.payload];
+         }
+        else{
+          return state;
+        }  
+      case "Remove" :
+         let UpdatedCartId = state.filter((id)=>{
+                return !(id == action.payload);
+          })
+           return UpdatedCartId;
+        default :
+          return state; 
+                    }
+      }
+     
+      let savedcart = JSON.parse(localStorage.getItem("cart"));
+  let[cartid,dispatch]= useReducer(reducer,savedcart?savedcart:[])
+     useEffect(()=>{
+        localStorage.setItem("cart",JSON.stringify(cartid));
+       
+      },[cartid]) 
 
   return (
     <>

@@ -4,7 +4,7 @@ import { context } from '../App'
 import { useContext } from 'react'
 
 const Cart = () => {
-    let {cartid,setcartid} = useContext(context);
+    let {cartid,dispatch} = useContext(context);
   return (
     <div id="Card">
         {
@@ -14,10 +14,7 @@ const Cart = () => {
                              <h1>{element.name}</h1>
                              <p>₹{element.price}</p> 
                              <button onClick={()=>{
-                                 let updatedCartId = cartid.filter((id)=>{
-                                    return id != element.id
-                                 })
-                                 setcartid(updatedCartId);
+                                  return dispatch({type : "Remove",payload : element.id})
                              }}>Remove</button>
 
                               
